@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Is Manas Online on Roblox?</title>
+  <title>Is Best_player9924 Online?</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #f4f4f4;
+      background-color: #e8f0fe;
       padding-top: 50px;
     }
     .card {
       background: white;
       padding: 20px;
       margin: auto;
-      width: 300px;
+      width: 320px;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
     }
     .status {
       font-size: 20px;
-      margin-top: 10px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <h2>Roblox Status Checker</h2>
+    <h2>Is Best_player9924 Online?</h2>
+    <img id="avatar" src="" alt="Roblox Avatar">
     <div id="username">Loading...</div>
-    <div id="status" class="status">Online status not available</div>
+    <div id="status" class="status">Checking...</div>
   </div>
 
   <script>
     const userId = 7158266237;
 
-    async function fetchUserInfo() {
+    async function loadUserInfo() {
       try {
-        const response = await fetch(`https://api.roblox.com/users/${userId}`);
-        const data = await response.json();
-        
-        document.getElementById('username').innerText = `Username: ${data.Username}`;
+        // Get username and basic info
+        const userRes = await fetch(`https://api.roblox.com/users/${userId}`);
+        const userData = await userRes.json();
+
+        document.getElementById('username').innerText = `Username: ${userData.Username}`;
+
+        // Load avatar image
+        document.getElementById('avatar').src = `https://www.roblox.com/headshot-thumbnail/image?userId=${userId}&width=150&height=150&format=png`;
+
+        // Online status (placeholder)
+        document.getElementById('status').innerText = "Online status: Coming soon";
+
       } catch (error) {
-        document.getElementById('status').innerText = 'Error fetching user data.';
         console.error(error);
+        document.getElementById('status').innerText = "Failed to load user data.";
       }
     }
 
-    fetchUserInfo();
+    loadUserInfo();
   </script>
 
 </body>
