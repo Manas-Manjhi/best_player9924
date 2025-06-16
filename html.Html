@@ -28,7 +28,7 @@
   <div class="card">
     <h2>Roblox Status Checker</h2>
     <div id="username">Loading...</div>
-    <div id="status" class="status">Checking...</div>
+    <div id="status" class="status">Online status not available</div>
   </div>
 
   <script>
@@ -36,14 +36,10 @@
 
     async function fetchUserInfo() {
       try {
-        const response = await fetch(`https://users.roblox.com/v1/users/${userId}`);
+        const response = await fetch(`https://api.roblox.com/users/${userId}`);
         const data = await response.json();
         
-        document.getElementById('username').innerText = `Username: ${data.name}`;
-        document.getElementById('status').innerText = `Account Created: ${new Date(data.created).toLocaleString()}`;
-        
-        // You could add "Online status: Not available" as placeholder
-        // Real-time online detection requires a backend with authentication
+        document.getElementById('username').innerText = `Username: ${data.Username}`;
       } catch (error) {
         document.getElementById('status').innerText = 'Error fetching user data.';
         console.error(error);
