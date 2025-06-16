@@ -1,68 +1,56 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Is Best_player9924 Online?</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #e8f0fe;
-      padding-top: 50px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin: auto;
-      width: 320px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-    img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-    }
-    .status {
-      font-size: 20px;
-      margin-top: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Best_player9924 Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .card {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .username {
+            font-size: 24px;
+            margin: 15px 0 10px 0;
+        }
+        .status {
+            font-size: 18px;
+            color: #555;
+        }
+        .button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="card">
-    <h2>Is Best_player9924 Online?</h2>
-    <img id="avatar" src="" alt="Roblox Avatar">
-    <div id="username">Loading...</div>
-    <div id="status" class="status">Checking...</div>
-  </div>
-
-  <script>
-    const userId = 7158266237;
-
-    async function loadUserInfo() {
-      try {
-        // Get username and basic info
-        const userRes = await fetch(`https://api.roblox.com/users/${userId}`);
-        const userData = await userRes.json();
-
-        document.getElementById('username').innerText = `Username: ${userData.Username}`;
-
-        // Load avatar image
-        document.getElementById('avatar').src = `https://www.roblox.com/headshot-thumbnail/image?userId=${userId}&width=150&height=150&format=png`;
-
-        // Online status (placeholder)
-        document.getElementById('status').innerText = "Online status: Coming soon";
-
-      } catch (error) {
-        console.error(error);
-        document.getElementById('status').innerText = "Failed to load user data.";
-      }
-    }
-
-    loadUserInfo();
-  </script>
-
+    <div class="card">
+        <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-7E873D28329FCB335C0F29AD247BBFDB-Png/150/150/AvatarHeadshot/Png/isCircular" alt="Roblox Avatar">
+        <div class="username">Best_player9924</div>
+        <div class="status">Online status not available</div>
+        <a class="button" href="https://www.roblox.com/users/7158266237/profile" target="_blank">View Profile</a>
+    </div>
 </body>
 </html>
-<img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-7E873D28329FCB335C0F29AD247BBFDB-Png/150/150/AvatarHeadshot/Png/isCircular" alt="Roblox Avatar">
